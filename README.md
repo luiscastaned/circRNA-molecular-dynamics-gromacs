@@ -364,6 +364,129 @@ Interpretation:
 - contacts.xvg  
 
 ---
+# 🎥 Visualization of MD Trajectory in VMD
+
+The molecular dynamics trajectory can be visualized as an animation (molecular movie) using VMD.
+
+---
+
+## 🧬 Software Required
+
+VMD (Visual Molecular Dynamics)
+
+Download:
+https://www.ks.uiuc.edu/Research/vmd/
+
+---
+
+## 📂 Load the Structure and Trajectory
+
+### Step 1 — Open VMD
+
+Launch VMD from terminal:
+
+```bash
+vmd
+```
+
+---
+
+### Step 2 — Load the Structure File
+
+In VMD:
+
+File → New Molecule  
+
+Click **Browse** and load:
+
+```
+md.gro
+```
+
+or alternatively:
+
+```
+md.tpr
+```
+
+Click **Load**
+
+---
+
+### Step 3 — Load the Trajectory
+
+With the molecule selected:
+
+File → Load Data Into Molecule  
+
+Browse and select:
+
+```
+md.xtc
+```
+
+Click **Load**
+
+---
+
+## ▶️ Play the Molecular Animation
+
+Use the animation controls in the VMD main window:
+
+- ▶ Play
+- ⏸ Pause
+- Adjust speed with the slider
+
+This will display the full MD trajectory as a molecular movie.
+
+---
+
+## 🎨 Recommended Visualization Settings
+
+Go to:
+
+Graphics → Representations
+
+Suggested settings:
+
+- Drawing Method: NewCartoon
+- Coloring Method: Name or ResName
+- Material: Opaque
+
+For better RNA visualization:
+
+- Coloring Method → ResType
+- Show hydrogen bonds (optional via HBonds plugin)
+
+---
+
+## 🎬 Export the Animation (Optional)
+
+To create a movie file:
+
+Extensions → Visualization → Movie Maker  
+
+Select format (e.g., MPEG-4)  
+Choose trajectory range  
+Click **Make Movie**
+
+---
+
+## 🔬 Scientific Interpretation
+
+Visualization allows:
+
+- Structural stability assessment  
+- Conformational transitions  
+- Loop flexibility observation  
+- Compaction/expansion detection  
+- Hydrogen bond rearrangements  
+
+For circRNA systems, animation helps identify:
+
+- Backbone flexibility  
+- Intramolecular contact persistence  
+- Structural breathing motions 
 
 # 👨‍🔬 Author
 
