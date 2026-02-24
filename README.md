@@ -4,15 +4,6 @@ Complete molecular dynamics (MD) simulation and structural analysis pipeline for
 
 ---
 
-## 📌 Repository Information
-
-**Repository Name:** circRNA-molecular-dynamics-gromacs  
-**Author:** Luis Ernesto Castañeda Mota  
-**Affiliation:** Department of Biochemistry, CINVESTAV-IPN  
-**Purpose:** Complete molecular dynamics (MD) simulation and structural analysis pipeline for circular RNA (circRNA).
-
----
-
 ## 📖 Overview
 
 This repository contains the full molecular dynamics (MD) workflow for a circular RNA (circRNA) system using GROMACS.
