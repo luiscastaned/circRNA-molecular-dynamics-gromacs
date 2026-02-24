@@ -123,12 +123,48 @@ gmx mdrun -deffnm npt
 ✔ System is now thermodynamically equilibrated.
 
 ---
-
 # 🔴 STEP 5 — Production MD (Scientific Simulation)
 
-Example: 100 ns simulation
+⚠️ **IMPORTANT NOTE**
 
-## Create `md.mdp`
+The simulation time is controlled by the parameter:
+
+```
+nsteps
+```
+
+The total simulation time is calculated as:
+
+```
+Total time (ns) = (nsteps × dt) / 1000
+```
+
+In this workflow:
+
+```
+dt = 0.002 ps  (2 fs)
+```
+
+So:
+
+```
+1 ns = 500,000 steps
+```
+
+---
+
+## 🧮 How to Set Simulation Length
+
+| Desired Time | nsteps Required |
+|-------------|-----------------|
+| 15 ns       | 7,500,000       |
+| 100 ns      | 50,000,000      |
+| 250 ns      | 125,000,000     |
+| 500 ns      | 250,000,000     |
+
+---
+
+## 📌 Example: 15 ns Simulation (Default)
 
 ```bash
 cat << EOF > md.mdp
@@ -164,12 +200,45 @@ pbc             = xyz
 EOF
 ```
 
-## Run Production
+---
+
+## 🔬 If You Want 250 ns
+
+Simply change:
+
+```
+nsteps = 125000000
+```
+
+---
+
+## 🔬 If You Want 500 ns
+
+Change to:
+
+```
+nsteps = 250000000
+```
+
+---
+
+## 🚀 Run Production
 
 ```bash
 gmx grompp -f md.mdp -c npt.gro -p topol.top -o md.tpr -maxwarn 1
 gmx mdrun -deffnm md
 ```
+
+---
+
+## 📖 Scientific Recommendation
+
+- 15 ns → short stability check  
+- 100 ns → moderate conformational sampling  
+- 250 ns → robust structural stability analysis  
+- 500 ns → publication-level conformational study  
+
+Longer simulations provide better conformational sampling for circRNA flexibility and intramolecular hydrogen bond stabilization.
 
 ---
 
